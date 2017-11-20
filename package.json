@@ -1,6 +1,6 @@
 {
     "name": "sp-service-wx",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "wechat service for super-project, base on sp-wx",
     "main": "index.js",
     "scripts": {

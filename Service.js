@@ -96,11 +96,32 @@ export default class WxService {
 
         // 如果没有，从微信开放平台读取
 
+        return this.refreshUserInfo(accessToken, openId)
+
+        // user = await this.wx.getUserInfo(accessToken, openId)
+        // debug('从微信开放平台获取微信用户信息: %O', user)
+        // user.wx_response = JSON.stringify(user)
+
+        // // 缓存并返回
+
+        // let rows = await this.wxUserModel.upsert(user)
+        // if (rows > 0) {
+        //     debug('从微信开放平台获取微信用户信息缓存到本地:成功')
+        // } else {
+        //     debug('从微信开放平台获取微信用户信息缓存到本地:失败')
+        // }
+
+        // return user
+    }
+
+    async refreshUserInfo(accessToken, openId) {
+
+        let user
+
         user = await this.wx.getUserInfo(accessToken, openId)
         debug('从微信开放平台获取微信用户信息: %O', user)
-        user.wx_response = JSON.stringify(user)
 
-        // 缓存并返回
+        user.wx_response = JSON.stringify(user)
 
         let rows = await this.wxUserModel.upsert(user)
         if (rows > 0) {
@@ -117,7 +138,7 @@ export default class WxService {
     }
 
     async fetchAudio(mediaId, savePath, filename = false) {
-        
+
         let buffer = await this.wx.fetchAudio(mediaId)
 
         // 把文件流保存到本地
