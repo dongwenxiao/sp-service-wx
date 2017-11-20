@@ -4,8 +4,6 @@
 --
 
 DROP TABLE IF EXISTS `dt_wx_access_token`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dt_wx_access_token` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `access_token` varchar(500) NOT NULL,
