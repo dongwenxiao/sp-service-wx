@@ -34,6 +34,10 @@ export default class WxService {
         return this.wx.getAuthorizeURL(redirect, state, scope)
     }
 
+    getAuthorizeQRCodeURL(redirect, state, scope) {
+        return this.wx.getAuthorizeQRCodeURL(redirect, state, scope)
+    }
+
     async getOAuthAccessToken(code) {
         return await this.wx.getOAuthAccessToken(code)
     }

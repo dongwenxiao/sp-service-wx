@@ -1,6 +1,6 @@
 {
     "name": "sp-service-wx",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "wechat service for super-project, base on sp-wx",
     "main": "index.js",
     "scripts": {
@@ -23,6 +23,6 @@
         "isomorphic-fetch": "^2.2.1",
         "debug": "^3.1.0",
         "sp-functions": "^2.1.0",
-        "sp-wx": "^2.0.0"
+        "sp-wx": "^2.1.0"
     }
 }
